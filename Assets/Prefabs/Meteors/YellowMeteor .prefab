@@ -123,7 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fa312c44d15db4d9408a9fe3110752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodeMeteorParticleEffect: {fileID: 6809929796805248011, guid: 1b0144bcd11ac9e4faea1d2efe83f80f, type: 3}
+  explodeMeteorParticleEffect: {fileID: 1459862227383078, guid: cc461484bcafc664fb68be84c1fc6860, type: 3}
+  explodeEarthParticleEffect: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
+  slider: {fileID: 6318491210598862814, guid: d54c824ab876a04429f1e979678a6f70, type: 3}
 --- !u!50 &-4886533845208981384
 Rigidbody2D:
   serializedVersion: 4

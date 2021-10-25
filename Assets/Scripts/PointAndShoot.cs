@@ -43,5 +43,6 @@ public class PointAndShoot : MonoBehaviour
         b.transform.position = bulletStart.transform.position;
         b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+        Destroy(b, 3f);
     }
 }
