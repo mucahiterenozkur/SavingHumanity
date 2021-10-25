@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 426654}
   - component: {fileID: 11491094}
+  - component: {fileID: 1787777302}
   m_Layer: 0
   m_Name: EarthHigh
-  m_TagString: Untagged
+  m_TagString: Earth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 132870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
   m_Children:
   - {fileID: 455774}
   - {fileID: 459932}
@@ -47,10 +48,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spin: 1
   spinParent: 0
-  speed: 1
+  speed: 5
   clockwise: 1
   direction: 1
   directionChangeSpeed: 2
+--- !u!58 &1787777302
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132870}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.1675759}
+  serializedVersion: 2
+  m_Radius: 20.274532
 --- !u!1 &160422
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,7 +85,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &459932
 Transform:
   m_ObjectHideFlags: 0
