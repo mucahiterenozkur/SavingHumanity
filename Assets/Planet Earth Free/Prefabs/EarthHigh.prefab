@@ -83,6 +83,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
   fillArea: {fileID: 0}
+  timerText: {fileID: 0}
+  timeRemaining: 120
+  timerIsRunning: 0
 --- !u!1 &160422
 GameObject:
   m_ObjectHideFlags: 0
