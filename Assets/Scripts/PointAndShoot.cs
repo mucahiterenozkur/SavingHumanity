@@ -16,7 +16,7 @@ public class PointAndShoot : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;   //open it when you are done with the game.
     }
 
     // Update is called once per frame
