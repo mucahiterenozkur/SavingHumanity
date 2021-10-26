@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Healthbar : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class Healthbar : MonoBehaviour
 
     public GameObject inGameCanvas;
     public GameObject gameOverCanvas;
+    public GameObject winCanvas;
+
+    public GameObject splashCanvas;
+    public GameObject difficultySelectionCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,7 @@ public class Healthbar : MonoBehaviour
 
         inGameCanvas.SetActive(true);
         gameOverCanvas.SetActive(false);
+        winCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,17 +43,27 @@ public class Healthbar : MonoBehaviour
     {
         if (timerIsRunning)
         {
-            if (timeRemaining > 0)
+            if (timeRemaining > 0 && slider.value > 0)
             {
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
             }
             else
             {
-                gameOverCanvas.SetActive(true);
+                //make the gameover or gamewin conditions
                 Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
+
+                if (slider.value > 0)
+                {
+                    winCanvas.SetActive(true);
+                }
+                else
+                {
+                    gameOverCanvas.SetActive(true);
+                }
+ 
             }
         }
     }
@@ -66,9 +82,12 @@ public class Healthbar : MonoBehaviour
     {
         if(other.gameObject.tag == "Meteor")
         {
-            totalHealth--;
-            slider.value = totalHealth;
-            Debug.Log(slider.value);
+            if (timerIsRunning)
+            {
+                totalHealth--;
+                slider.value = totalHealth;
+                Debug.Log(slider.value);
+            }
 
             if(slider.value == 0)
             {
@@ -77,4 +96,16 @@ public class Healthbar : MonoBehaviour
             }
         }
     }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Splash");
+    }
+
+   
 }

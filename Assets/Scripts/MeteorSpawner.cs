@@ -6,7 +6,8 @@ public class MeteorSpawner : MonoBehaviour
 {
     public List<Transform> spawnPoints;
     public List<GameObject> meteors;
-    public float meteorSpeed;
+    public static float meteorSpeed = 10;
+    public static float timeBetweenSpawns = 2f;
 
     //private float timeToSpawn = 2f;
     //public float timeBetweenSpawns = 1f;
@@ -34,9 +35,9 @@ public class MeteorSpawner : MonoBehaviour
         {
             List<int> whereToPlaced = new List<int>();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 7; i++)
             {
-                int randomPoint = Random.Range(0, 7);
+                int randomPoint = Random.Range(0, 5);
 
                 if (!whereToPlaced.Contains(randomPoint))
                 {
@@ -52,7 +53,7 @@ public class MeteorSpawner : MonoBehaviour
         }
         
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(timeBetweenSpawns);
 
         if (Healthbar.timerIsRunning)
         {
