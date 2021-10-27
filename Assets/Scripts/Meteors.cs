@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using EZCameraShake;
 
 public class Meteors : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class Meteors : MonoBehaviour
         if (other.gameObject.tag == "Earth")
         {
             //Debug.Log(other.gameObject.name);
+            CameraShaker.Instance.ShakeOnce(1f, 1f, 0.1f, 1f);
             Destroy(gameObject);
             //Destroy(other.gameObject);
             GameObject particle = Instantiate(explodeEarthParticleEffect, this.gameObject.transform.position, this.gameObject.transform.rotation) as GameObject;

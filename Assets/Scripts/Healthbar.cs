@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using EZCameraShake;
 
 public class Healthbar : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Healthbar : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameObject winCanvas;
 
+    private int numberForCameraShake;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,8 @@ public class Healthbar : MonoBehaviour
         inGameCanvas.SetActive(true);
         gameOverCanvas.SetActive(false);
         winCanvas.SetActive(false);
+
+        numberForCameraShake = 0;
     }
 
     // Update is called once per frame
@@ -63,7 +68,17 @@ public class Healthbar : MonoBehaviour
                     }
                     else
                     {
+                        //CameraShaker.Instance.ShakeOnce(4f, 1f, 1f, 1f);
+                        numberForCameraShake++;
+                        if(numberForCameraShake == 1)
+                        {
+                            //Debug.Log("here");
+                            CameraShaker.Instance.ShakeOnce(10f, 10f, 0.1f, 1f);
+                            numberForCameraShake++;
+                        }
+                        
                         gameOverCanvas.SetActive(true);
+                        
                     }
 
                 }
