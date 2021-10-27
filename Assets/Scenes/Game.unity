@@ -2640,7 +2640,7 @@ PrefabInstance:
       objectReference: {fileID: 345346002}
     - target: {fileID: 8565253100730499785, guid: a52ae24fca542d640818fbc9fed8bc11, type: 3}
       propertyPath: timeRemaining
-      value: 120
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8565253100730499785, guid: a52ae24fca542d640818fbc9fed8bc11, type: 3}
       propertyPath: gameOverCanvas

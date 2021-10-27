@@ -7,12 +7,16 @@ public class SelectDifficulty : MonoBehaviour
 {
     public GameObject splashCanvas;
     public GameObject difficultySelectionCanvas;
+    public Animator splashAnimator;
+    public Animator difficultySelectAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
-        splashCanvas.SetActive(true);
-        difficultySelectionCanvas.SetActive(false);
+        //splashAnimator.SetBool("isPlayPressed", false);
+        difficultySelectAnimator.SetBool("difficultySelect", false);
+        //splashCanvas.SetActive(true);
+        //difficultySelectionCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,8 +27,10 @@ public class SelectDifficulty : MonoBehaviour
 
     public void Play()
     {
-        splashCanvas.SetActive(false);
-        difficultySelectionCanvas.SetActive(true);
+        splashAnimator.SetBool("isPlayPressed", true);
+        difficultySelectAnimator.SetBool("difficultySelect", true);
+        //splashCanvas.SetActive(false);
+        //difficultySelectionCanvas.SetActive(true);
         //maybe add anim
         //SceneManager.LoadScene("Game");
     }
@@ -39,6 +45,14 @@ public class SelectDifficulty : MonoBehaviour
         //timeRemaining = 10;
         MeteorSpawner.meteorSpeed = 10f;
         MeteorSpawner.timeBetweenSpawns = 2f;
+        SceneManager.LoadScene("Game");
+    }
+
+    public void MediumModeSelection()
+    {
+        //timeRemaining = 20;
+        MeteorSpawner.meteorSpeed = 10f;
+        MeteorSpawner.timeBetweenSpawns = 1f;
         SceneManager.LoadScene("Game");
     }
 
