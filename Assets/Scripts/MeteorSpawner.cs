@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MeteorSpawner : MonoBehaviour
 {
@@ -9,17 +10,52 @@ public class MeteorSpawner : MonoBehaviour
     public static float meteorSpeed = 10;
     public static float timeBetweenSpawns = 2f;
 
+    private float countDownNumber = 3;
+    public TextMeshProUGUI countDownText;
+    public static bool iscountDownFinished = false;
+
     //private float timeToSpawn = 2f;
     //public float timeBetweenSpawns = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnMeteor());
+        countDownNumber = 3;
+        countDownText.text = countDownNumber.ToString();
+
+        if (iscountDownFinished)
+        {
+            iscountDownFinished = false;
+        }
+
+        //if (iscountDownFinished)
+        //{
+        //    StartCoroutine(SpawnMeteor());
+        //}
+        
     }
 
     void Update()
-    {
+    {       
+        if (!iscountDownFinished)
+        {
+            //Debug.Log("worked");
+            countDownNumber -= Time.deltaTime;
+            countDownText.text = countDownNumber.ToString("0");
+
+            if (countDownNumber <= 0)
+            {
+                countDownText.gameObject.SetActive(false);
+                iscountDownFinished = true;
+                StartCoroutine(SpawnMeteor());
+                
+
+            }
+            
+
+        }
+
+
         //if(Time.time >= timeToSpawn)
         //{
         //    SpawnMeteor();
@@ -52,7 +88,6 @@ public class MeteorSpawner : MonoBehaviour
             }
         }
         
-
         yield return new WaitForSeconds(timeBetweenSpawns);
 
         if (Healthbar.timerIsRunning)
@@ -60,8 +95,6 @@ public class MeteorSpawner : MonoBehaviour
             StartCoroutine(SpawnMeteor());
         }
         
-
     }
-
 
 }

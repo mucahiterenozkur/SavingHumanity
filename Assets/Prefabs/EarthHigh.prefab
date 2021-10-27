@@ -84,7 +84,7 @@ MonoBehaviour:
   slider: {fileID: 0}
   fillArea: {fileID: 0}
   timerText: {fileID: 0}
-  timeRemaining: 20
+  timeRemaining: 60
   inGameCanvas: {fileID: 0}
   gameOverCanvas: {fileID: 0}
   winCanvas: {fileID: 0}

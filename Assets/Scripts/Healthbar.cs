@@ -21,15 +21,13 @@ public class Healthbar : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameObject winCanvas;
 
-    public GameObject splashCanvas;
-    public GameObject difficultySelectionCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
         meteorSpawner = FindObjectOfType<MeteorSpawner>();
 
-        timerIsRunning = true;
+        //timerIsRunning = true;
         slider.value = totalHealth;
         fillArea.color = Color.green;
 
@@ -41,31 +39,37 @@ public class Healthbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timerIsRunning)
-        {
-            if (timeRemaining > 0 && slider.value > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-                DisplayTime(timeRemaining);
-            }
-            else
-            {
-                //make the gameover or gamewin conditions
-                Debug.Log("Time has run out!");
-                timeRemaining = 0;
-                timerIsRunning = false;
 
-                if (slider.value > 0)
+        if (MeteorSpawner.iscountDownFinished)
+        {
+            timerIsRunning = true;
+            if (timerIsRunning)
+            {
+                if (timeRemaining > 0 && slider.value > 0)
                 {
-                    winCanvas.SetActive(true);
+                    timeRemaining -= Time.deltaTime;
+                    DisplayTime(timeRemaining);
                 }
                 else
                 {
-                    gameOverCanvas.SetActive(true);
+                    //make the gameover or gamewin conditions
+                    Debug.Log("Time has run out!");
+                    timeRemaining = 0;
+                    timerIsRunning = false;
+
+                    if (slider.value > 0)
+                    {
+                        winCanvas.SetActive(true);
+                    }
+                    else
+                    {
+                        gameOverCanvas.SetActive(true);
+                    }
+
                 }
- 
             }
-        }
+        }        
+
     }
 
     public void DisplayTime(float timeToDisplay)
@@ -99,12 +103,16 @@ public class Healthbar : MonoBehaviour
 
     public void PlayAgain()
     {
+        
         SceneManager.LoadScene("Game");
+        
     }
 
     public void MainMenu()
     {
+        //MeteorSpawner.iscountDownFinished = false;
         SceneManager.LoadScene("Splash");
+        
     }
 
    

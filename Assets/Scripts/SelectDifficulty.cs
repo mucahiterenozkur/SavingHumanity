@@ -52,7 +52,7 @@ public class SelectDifficulty : MonoBehaviour
     {
         //timeRemaining = 20;
         MeteorSpawner.meteorSpeed = 10f;
-        MeteorSpawner.timeBetweenSpawns = 1f;
+        MeteorSpawner.timeBetweenSpawns = 1.5f;
         SceneManager.LoadScene("Game");
     }
 
