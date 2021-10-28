@@ -22,6 +22,8 @@ public class Healthbar : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameObject winCanvas;
 
+    public GameObject directionalLight;
+
     private int numberForCameraShake;
 
 
@@ -68,6 +70,7 @@ public class Healthbar : MonoBehaviour
                     }
                     else
                     {
+                        directionalLight.SetActive(false);
                         //CameraShaker.Instance.ShakeOnce(4f, 1f, 1f, 1f);
                         numberForCameraShake++;
                         if(numberForCameraShake == 1)

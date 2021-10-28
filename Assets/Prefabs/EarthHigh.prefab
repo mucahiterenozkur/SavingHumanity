@@ -88,8 +88,7 @@ MonoBehaviour:
   inGameCanvas: {fileID: 0}
   gameOverCanvas: {fileID: 0}
   winCanvas: {fileID: 0}
-  splashCanvas: {fileID: 2662409835816505050, guid: bcb7227dae17c784d9105e311e135922, type: 3}
-  difficultySelectionCanvas: {fileID: 2228946097931687412, guid: 2aa9020ef70f0c940b6bd017da43eefd, type: 3}
+  directionalLight: {fileID: 0}
 --- !u!1 &2173027305941294699
 GameObject:
   m_ObjectHideFlags: 0

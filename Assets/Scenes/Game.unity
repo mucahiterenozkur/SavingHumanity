@@ -2842,6 +2842,10 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 488512162}
+    - target: {fileID: 8565253100730499785, guid: a52ae24fca542d640818fbc9fed8bc11, type: 3}
+      propertyPath: directionalLight
+      value: 
+      objectReference: {fileID: 2156091565744449764}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a52ae24fca542d640818fbc9fed8bc11, type: 3}
 --- !u!1001 &2578322792974180427
