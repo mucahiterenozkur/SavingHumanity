@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class AudioManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+
+        
     }
 
     // Start is called before the first frame update
@@ -26,6 +29,13 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (SceneManager.GetActiveScene().name.Equals("Game"))
+        {
+            Cursor.visible = false;   //open it when you are done with the game.
+        }
+        else
+        {
+            Cursor.visible = true;
+        }
     }
 }

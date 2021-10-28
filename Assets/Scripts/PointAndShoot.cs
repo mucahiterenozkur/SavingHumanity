@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PointAndShoot : MonoBehaviour
 {
@@ -16,8 +17,12 @@ public class PointAndShoot : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Cursor.visible = false;   //open it when you are done with the game.
+        //if(SceneManager.GetActiveScene().name.Equals("Game"))
+        //{
+        //    Cursor.visible = false;   //open it when you are done with the game.
+        //}
     }
+        
 
     // Update is called once per frame
     void Update()
