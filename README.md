@@ -6,8 +6,8 @@ A meteor shower that will start at 12 o'clock at night on October 19 and last fo
 Everyone is on the run, except for one astronaut. Will he be able to save the world and humanity from this danger? It's time to show your talents.<br><br>
 Saving Humanity is mix of 2D standing shooter and tower defense game where you aim and shoot the enemies before they give damage to what you protect.<br><br>
 How to play --> Control your mouse to aim and press left click to shoot.<br><br>
-<strong> Here's the gameplay video --> </strong><br><br>
-<strong> If you want to support me on itch.io or play the game --> </strong><br><br>
+<strong> Here's the gameplay video --> </strong> bit.ly/savinghumanitygameplay <br><br>
+<strong> If you want to support me on itch.io or play the game --> </strong> https://mucahiterenozkur.itch.io/saving-humanity <br><br>
 
 <strong> Gameplay </strong>
 
